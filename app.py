@@ -1,9 +1,11 @@
 	from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pets.db'
 db = SQLAlchemy(app)
+
 
 # Pet model
 class Pet(db.Model):
