@@ -1,0 +1,11 @@
+<h2>Available Pets</h2>
+<div style="display: flex; flex-wrap: wrap;">
+    {% for pet in pets %}
+    <div style="margin: 10px; border: 1px solid #ccc; padding: 10px;">
+        <img src="{{ pet.image_url }}" alt="{{ pet.name }}" style="width:150px;">
+        <h3>{{ pet.name }}</h3>
+        <p>Type: {{ pet.type }} | Age: {{ pet.age }}</p>
+    </div>
+    {% endfor %}
+</div>
+<a href="/">Back to home</a>

@@ -1,0 +1,16 @@
+<h2>Add a New Pet</h2>
+<form method="POST">
+    <input type="text" name="name" placeholder="Pet Name" required><br>
+    <input type="text" name="type" placeholder="Pet Type" required><br>
+    <input type="number" name="age" placeholder="Age" required><br>
+    <input type="text" name="image_url" placeholder="Image URL"><br>
+    <button type="submit">Add Pet</button>
+</form>
+
+<h2>All Pets</h2>
+<ul>
+    {% for pet in pets %}
+    <li>{{ pet.name }} - <a href="{{ url_for('delete_pet', pet_id=pet.id) }}">Delete</a></li>
+    {% endfor %}
+</ul>
+<a href="/">Back to home</a>
